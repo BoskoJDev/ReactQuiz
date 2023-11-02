@@ -1,0 +1,68 @@
+body {
+  background-color: aquamarine;
+}
+
+.card-grid {
+  display: grid;
+  align-items: center;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  border-radius: 0.25rem;
+  box-shadow: 0 0 10px 10px rgba(0, 0, 0, 0.2);
+  background-color: wheat;
+  height: 200px;
+  cursor: pointer;
+  transform: perspective(1000px) rotateY(var(--rotate-y, 0deg));
+  transform-style: preserve-3d;
+  transition: 200ms;
+}
+
+.card:hover {
+  box-shadow: 0 0 10px 10px rgba(0, 0, 0, 0.3);
+}
+
+.card.flip {
+  --rotate-y: 180deg;
+}
+
+.card .front,
+.card .back {
+  position: absolute;
+  padding: 1rem;
+  backface-visibility: hidden;
+}
+
+.card .front {
+  text-align: left;
+}
+
+.card .back {
+  transform: rotateY(180deg);
+}
+
+.flashcard-option {
+  margin: 5px;
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.flashcard-option:first-child {
+  margin-top: 15px;
+}
+
+.question-form {
+  margin: 1rem;
+  background-color: chocolate;
+  border-radius: 0.5rem;
+  text-align: center;
+}
+
+.options {
+  background-color: cadetblue;
+}
